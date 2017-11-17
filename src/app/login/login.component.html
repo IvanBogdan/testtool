@@ -1,0 +1,28 @@
+<form class="container">
+  <div class="center">
+
+    <span class="error" *ngFor="let error of errors">{{error}}</span>
+
+    <br/>
+    <input [formControl]="loginControl"
+           type="text"
+           class="halfwidth"
+           placeholder="Enter Username">
+    <span class="error">{{loginError}}</span>
+
+    <br/>
+    <input [formControl]="passControl"
+           type="password"
+           class="halfwidth"
+           placeholder="Enter Password"
+           id="psw">
+    <span class="error">{{passwordError}}</span>
+
+    <br/>
+    <button (click)="login()" class="ttbtn halfwidth">Login</button>
+
+    <br/>
+    <input type="checkbox"
+           checked="checked"> Remember me
+  </div>
+</form>

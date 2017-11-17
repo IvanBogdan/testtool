@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+.ttbtn {
+  /*background-color: #4CAF50;*/
+  background-color: cadetblue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ttbtn:hover {
+  opacity: 0.8;
+}
+
+.ttbtn:active {
+  box-shadow: 2px 2px 5px rgba(0,0,0,10);
+}
