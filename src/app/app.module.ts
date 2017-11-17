@@ -16,6 +16,7 @@ import {CookieService} from 'ng2-cookies';
 import {AuthGuard} from './guards/auth/auth.guard';
 import {SideBarComponent} from './content/side-bar/side-bar.component';
 import {HeaderComponent} from './content/header/header.component';
+import { AccessLevelPipe } from './pipe/access-level.pipe';
 
 const routes = [
   {path: '', component: LoginComponent},
@@ -28,7 +29,8 @@ const routes = [
     LoginComponent,
     ContentComponent,
     SideBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    AccessLevelPipe
   ],
   imports: [
     BrowserModule,

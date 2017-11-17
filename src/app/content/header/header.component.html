@@ -1,3 +1,19 @@
-<p>
-  header works!
-</p>
+<header class="header-6">
+  <div class="branding">
+    <a href="tt" class="nav-link">
+      <clr-icon shape="vm-bug"></clr-icon>
+      <span class="title">Test Tool</span>
+    </a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown>
+      <button class="nav-text noFocus" clrDropdownTrigger>
+        {{getUser().name}} ({{getUser().accessLevel|accessLevel}})
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <a clrDropdownItem (click)="logout()">Log out</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
+</header>
