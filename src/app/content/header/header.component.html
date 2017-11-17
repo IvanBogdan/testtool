@@ -8,7 +8,7 @@
   <div class="header-actions">
     <clr-dropdown>
       <button class="nav-text noFocus" clrDropdownTrigger>
-        {{getUser().name}} ({{getUser().accessLevel|accessLevel}})
+        {{getUser()?.name}} ({{getUser()?.accessLevel|accessLevel}})
         <clr-icon shape="caret down"></clr-icon>
       </button>
       <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">

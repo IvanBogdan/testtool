@@ -1,5 +1,8 @@
 export class Consts {
-  public static BD_URL = 'http://localhost:8080';
+
+  public static HOST = 'http://195.208.109.61:807';
+
+  public static BD_URL = Consts.HOST + '/ATTP';
 
   public static LOGIN_URL = Consts.BD_URL + '/auth/login';
   public static LOGOUT_URL = Consts.BD_URL + '/auth/logout';
