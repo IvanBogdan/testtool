@@ -5,12 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AccessLevelPipe implements PipeTransform {
 
-  transform(value: number): string {
+  transform(value: number|string): string {
     switch (value) {
-      case 0: return 'Администратор';
-      case 1: return 'Оператор';
+      case 0:;
+      case '0': return 'Администратор';
+      case 1:;
+      case '1': return 'Оператор';
+      default: return 'Unknown Role';
     }
-    return 'Unknown Role';
   }
 
 }

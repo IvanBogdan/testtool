@@ -17,10 +17,37 @@ import {AuthGuard} from './guards/auth/auth.guard';
 import {SideBarComponent} from './content/side-bar/side-bar.component';
 import {HeaderComponent} from './content/header/header.component';
 import { AccessLevelPipe } from './pipes/access-level.pipe';
+import { ContentInComponent } from './content/content-in/content-in.component';
+import { ProfileComponent } from './content/content-in/profile/profile.component';
+import { ProductsComponent } from './content/content-in/products/products.component';
+import { ProductService } from './services/product/product.service';
+import { ProductComponent } from './content/content-in/products/product/product.component';
+import { BasketComponent } from './content/content-in/basket/basket.component';
+import { OrdersComponent } from './content/content-in/orders/orders.component';
+import { OrderComponent } from './content/content-in/orders/order/order.component';
+import { AddProductComponent } from './content/content-in/products/add-product/add-product.component';
+import { AllComponent } from './content/content-in/products/all/all.component';
 
+
+const productsRoutes = [
+  {path: '', component: AllComponent},
+  {path: 'product', component: ProductComponent},
+  {path: 'addproduct', component: AddProductComponent}
+];
+const ttRoutes = [
+  {path: 'profile', component: ProfileComponent},
+  {path: 'products', component: ProductsComponent, children: productsRoutes},
+  {path: 'busket', component: BasketComponent},
+  {path: 'orders', component: OrdersComponent}
+];
 const routes = [
   {path: '', component: LoginComponent},
-  {path: 'tt', component: ContentComponent, canActivate: [AuthGuard]}
+  {
+    path: 'market',
+    component: ContentComponent,
+    canActivate: [AuthGuard],
+    children: ttRoutes
+  }
 ];
 
 @NgModule({
@@ -30,7 +57,16 @@ const routes = [
     ContentComponent,
     SideBarComponent,
     HeaderComponent,
-    AccessLevelPipe
+    AccessLevelPipe,
+    ContentInComponent,
+    ProfileComponent,
+    ProductsComponent,
+    ProductComponent,
+    BasketComponent,
+    OrdersComponent,
+    OrderComponent,
+    AddProductComponent,
+    AllComponent
   ],
   imports: [
     BrowserModule,
@@ -43,10 +79,12 @@ const routes = [
   providers: [
     UserService,
     AuthService,
+    ProductService,
     AuthGuard,
     CookieService
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

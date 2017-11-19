@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    const userParams = new HttpParams().set('token', this.cookie.get('token'));
+    const userParams = new HttpParams().set('token', this.cookie.get('accessToken'));
     return this.httpClient.get<boolean>(Consts.CHECK_LOGIN_URL, {params: userParams});
   }
 

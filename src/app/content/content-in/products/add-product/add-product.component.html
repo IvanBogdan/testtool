@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Name:</th>
+    <th><input type="text" #name style="width: 140px"></th>
+  </tr>
+  <tr>
+    <th>description:</th>
+    <th><input type="text" #description style="width: 140px"></th>
+  </tr>
+  <tr>
+    <th>price:</th>
+    <th><input type="number" #price style="width: 140px"></th>
+  </tr>
+  <tr>
+    <th>quantity:</th>
+    <th><input type="number" #quantity style="width: 140px"></th>
+  </tr>
+</table>
+<button (click)='addProduct(name.value, description.value, price.value, quantity.value)' class='button'>Добавить</button>

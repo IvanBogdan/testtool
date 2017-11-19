@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {User} from '../../services/user/user';
 import {UserService} from '../../services/user/user.service';
 import {CookieService} from 'ng2-cookies';
@@ -12,31 +12,24 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  private user: User;
+  @Input('user') private _user: User;
 
-  constructor(private userService: UserService,
-              private auth: AuthService,
+  constructor(private auth: AuthService,
               private router: Router,
               private cookie: CookieService) {
   }
 
   ngOnInit() {
-    this.userService.getUser().subscribe(
-      user => {
-        this.user = user;
-      }
-    );
   }
 
-  getUser() {
-    return this.user;
+  get user(): User {
+    return this._user;
   }
 
   logout() {
     this.auth.logout().subscribe(
       _ => {
-        this.cookie.delete('token');
-        this.cookie.delete('accessLevel');
+        this.cookie.deleteAll();
         this.router.navigate(['/']);
       }
     );

@@ -1,0 +1,8 @@
+<button routerLink="addproduct" *ngIf="isAdmin()">Добавить продукт</button>
+<div class="row">
+  <div class="col-xs" *ngFor='let product of productList'>
+      <span class="clr-example-col-value">
+          <app-product [product]='product'></app-product>
+      </span>
+  </div>
+</div>

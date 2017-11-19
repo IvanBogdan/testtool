@@ -7,7 +7,7 @@ export class Consts {
 
   public static HOST_URL = 'http://' + Consts.HOST + ':' + Consts.PORT;
 
-  public static BD_URL = Consts.HOST + '/ATTP';
+  public static BD_URL = Consts.HOST_URL + '/ATTP';
 
   public static LOGIN_URL = Consts.BD_URL + '/auth/login';
   public static LOGOUT_URL = Consts.BD_URL + '/auth/logout';
@@ -15,4 +15,7 @@ export class Consts {
 
   public static USER_URL = Consts.BD_URL + '/users/user';
   public static USER_BY_TOKEN_URL = Consts.BD_URL + '/users/userByToken';
+
+  public static PRODUCTS_URL = Consts.BD_URL + '/products';
+  public static PRODUCT_ADD_URL = Consts.PRODUCTS_URL + '/add';
 }

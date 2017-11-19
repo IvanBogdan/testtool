@@ -39,14 +39,21 @@ export class LoginComponent implements OnInit {
       .subscribe(
         token => {
           if (token != null) {
-            this.cookie.set('token', token.token);
+            this.cookie.deleteAll();
+            this.cookie.set('accessToken', token.token);
             this.cookie.set('accessLevel', token.accessLevel.toString());
-            this.router.navigate(['tt']);
+            this.router.navigate(['market']);
           } else {
             this.loginFail();
           }
         },
-        _ => this.loginFail()
+        error => {
+          if (error.status === 404) {
+            this.addError('Не найден удалённый сервер');
+          } else {
+            this.addError('Ошибка подключения к удалённому серверу');
+          }
+        }
       );
   }
 

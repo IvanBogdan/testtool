@@ -12,6 +12,6 @@ export class UserService {
               private cookie: CookieService) { }
 
   getUser(): Observable<User> {
-    return this.http.get<User>(Consts.USER_BY_TOKEN_URL + '/' + this.cookie.get('token'));
+    return this.http.get<User>(Consts.USER_BY_TOKEN_URL + '/' + this.cookie.get('accessToken'));
   }
 }

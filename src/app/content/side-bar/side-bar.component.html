@@ -1,28 +1,15 @@
 <section class="sidenav-content">
-  <a href="..." class="nav-link active">
-    Nav Element 1
-  </a>
-  <a href="..." class="nav-link">
-    Nav Element 2
-  </a>
-  <section class="nav-group collapsible">
-    <input id="tabexample1" type="checkbox">
-    <label for="tabexample1">Collapsible Nav Element</label>
-    <ul class="nav-list">
-      <li><a class="nav-link">Link 1</a></li>
-      <li><a class="nav-link">Link 2</a></li>
-    </ul>
-  </section>
   <section class="nav-group">
     <input id="tabexample2" type="checkbox">
-    <label for="tabexample2">Default Nav Element</label>
-    <ul class="nav-list">
-      <li><a class="nav-link">Link 1</a></li>
-      <li><a class="nav-link">Link 2</a></li>
-      <li><a class="nav-link active">Link 3</a></li>
-      <li><a class="nav-link">Link 4</a></li>
-      <li><a class="nav-link">Link 5</a></li>
-      <li><a class="nav-link">Link 6</a></li>
+    <label for="tabexample2">Главное меню</label>
+    <ul class="nav-list" *ngIf="isOper()">
+      <li><a class="nav-link" routerLinkActive='active' routerLink='products'>Каталог</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='busket'>Корзина</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='orders'>Заказы</a></li>
+    </ul>
+    <ul class="nav-list" *ngIf="isAdmin()">
+      <li><a class="nav-link" routerLinkActive='active' routerLink='orders'>Заказы</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='products'>Продукты</a></li>
     </ul>
   </section>
 </section>

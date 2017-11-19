@@ -1,11 +1,11 @@
 <div class="main-container">
-  <app-header></app-header>
+  <app-header [user]='user'></app-header>
   <div class="content-container">
     <nav class="sidenav">
       <app-side-bar></app-side-bar>
     </nav>
     <div class="content-area">
-      content
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
