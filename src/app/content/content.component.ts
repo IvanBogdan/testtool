@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import { UserService } from '../services/user/user.service';
-import { User } from '../services/user/user';
-import { Cookie } from 'ng2-cookies';
-import { Router, ActivatedRoute } from '@angular/router';
+import {UserService} from '../services/user/user.service';
+import {User} from '../services/user/user';
+import {Cookie} from 'ng2-cookies';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-content',
@@ -38,7 +38,7 @@ export class ContentComponent implements OnInit {
   redirect() {
     let options = {relativeTo: this.route};
     if (this.router.routerState.snapshot.url.endsWith('market')) {
-      switch(Cookie.get('accessLevel')) {
+      switch (Cookie.get('accessLevel')) {
         case '0': {
           this.router.navigate(['orders'], options);
           return;
@@ -47,7 +47,8 @@ export class ContentComponent implements OnInit {
           this.router.navigate(['products'], options);
           return;
         }
-        default: this.router.navigate([''], options);
+        default:
+          this.router.navigate([''], options);
       }
     }
   }

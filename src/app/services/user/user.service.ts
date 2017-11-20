@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Consts} from '../../Consts';
 import {CookieService} from 'ng2-cookies';
@@ -9,7 +9,8 @@ import {Observable} from 'rxjs/Observable';
 export class UserService {
 
   constructor(private http: HttpClient,
-              private cookie: CookieService) { }
+              private cookie: CookieService) {
+  }
 
   getUser(): Observable<User> {
     return this.http.get<User>(Consts.USER_BY_TOKEN_URL + '/' + this.cookie.get('accessToken'));

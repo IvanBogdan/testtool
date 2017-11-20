@@ -16,17 +16,17 @@ import {CookieService} from 'ng2-cookies';
 import {AuthGuard} from './guards/auth/auth.guard';
 import {SideBarComponent} from './content/side-bar/side-bar.component';
 import {HeaderComponent} from './content/header/header.component';
-import { AccessLevelPipe } from './pipes/access-level.pipe';
-import { ContentInComponent } from './content/content-in/content-in.component';
-import { ProfileComponent } from './content/content-in/profile/profile.component';
-import { ProductsComponent } from './content/content-in/products/products.component';
-import { ProductService } from './services/product/product.service';
-import { ProductComponent } from './content/content-in/products/product/product.component';
-import { BasketComponent } from './content/content-in/basket/basket.component';
-import { OrdersComponent } from './content/content-in/orders/orders.component';
-import { OrderComponent } from './content/content-in/orders/order/order.component';
-import { AddProductComponent } from './content/content-in/products/add-product/add-product.component';
-import { AllComponent } from './content/content-in/products/all/all.component';
+import {AccessLevelPipe} from './pipes/access-level.pipe';
+import {ContentInComponent} from './content/content-in/content-in.component';
+import {ProfileComponent} from './content/content-in/profile/profile.component';
+import {ProductsComponent} from './content/content-in/products/products.component';
+import {ProductService} from './services/product/product.service';
+import {ProductComponent} from './content/content-in/products/product/product.component';
+import {BasketComponent} from './content/content-in/basket/basket.component';
+import {OrdersComponent} from './content/content-in/orders/orders.component';
+import {OrderComponent} from './content/content-in/orders/order/order.component';
+import {AddProductComponent} from './content/content-in/products/add-product/add-product.component';
+import {AllComponent} from './content/content-in/products/all/all.component';
 
 
 const productsRoutes = [

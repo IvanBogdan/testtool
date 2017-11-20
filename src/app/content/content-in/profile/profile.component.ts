@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../../services/user/user';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit, Input} from '@angular/core';
+import {User} from '../../../services/user/user';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
     accessLevel: null
   };
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.route.queryParams.subscribe(

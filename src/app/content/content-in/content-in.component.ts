@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../services/user/user';
+import {Component, OnInit, Input} from '@angular/core';
+import {User} from '../../services/user/user';
 
 @Component({
   selector: 'app-content-in',
@@ -10,7 +10,8 @@ export class ContentInComponent implements OnInit {
 
   @Input('user') private _user: User;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

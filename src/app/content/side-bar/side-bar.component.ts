@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Cookie } from 'ng2-cookies';
+import {Component, OnInit} from '@angular/core';
+import {Cookie} from 'ng2-cookies';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,12 +10,13 @@ export class SideBarComponent implements OnInit {
 
   private _accessLevel: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this._accessLevel = Cookie.get('accessLevel');
   }
-  
+
   isAdmin(): boolean {
     return this._accessLevel === '0';
   }

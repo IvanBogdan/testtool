@@ -17,16 +17,6 @@ export class ProductService {
 
   addProduct(product: Product): Observable<any> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.post(Consts.PRODUCT_ADD_URL, product, {headers: headers});
+    return this.http.post(Consts.PRODUCT_ADD_URL, product, {headers: headers, responseType: 'text'});
   }
-
-  // addProduct(name: string, description: string, price: number, quantity: number): Observable<any> {
-  //   // const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-  //   const params = new HttpParams()
-  //   .set('name', name)
-  //   .set('description', description)
-  //   .set('price', price.toString())
-  //   .set('quantity', quantity.toString());
-  //   return this.http.post(Consts.PRODUCT_ADD_URL, {headers: headers, params: params});
-  // }
 }
