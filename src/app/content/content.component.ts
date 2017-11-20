@@ -33,6 +33,7 @@ export class ContentComponent implements OnInit {
     this.userService.getUser().subscribe(
       user => {
         this._user = user;
+        Basket.userId = user.id;
       }
     );
   }
@@ -56,6 +57,6 @@ export class ContentComponent implements OnInit {
   }
 
   clearBasket() {
-    Basket.clear();
+    Basket.clearAll();
   }
 }

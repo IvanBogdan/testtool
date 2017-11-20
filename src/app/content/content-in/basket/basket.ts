@@ -2,6 +2,7 @@ import {Product} from '../../../services/product/product';
 
 export class Basket {
 
+  private static _userId: string;
   private static _itemList: Item[] = [];
 
 
@@ -38,6 +39,35 @@ export class Basket {
 
   static clear() {
     this._itemList = [];
+  }
+
+  static clearAll() {
+    this.clear();
+    this._userId = null;
+  }
+
+  static getProductIdList(): string[] {
+    const productIdList = [];
+    for (let i = 0; i < this._itemList.length; i++) {
+      productIdList.push(this._itemList[i].product.id);
+    }
+    return productIdList;
+  }
+
+  static getQuantityList(): number[] {
+    const quantityIdList = [];
+    for (let i = 0; i < this._itemList.length; i++) {
+      quantityIdList.push(this._itemList[i].quantity);
+    }
+    return quantityIdList;
+  }
+
+  static get userId(): string {
+    return this._userId;
+  }
+
+  static set userId(value: string) {
+    this._userId = value;
   }
 }
 

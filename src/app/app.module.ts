@@ -27,6 +27,7 @@ import {OrdersComponent} from './content/content-in/orders/orders.component';
 import {OrderComponent} from './content/content-in/orders/order/order.component';
 import {AddProductComponent} from './content/content-in/products/add-product/add-product.component';
 import {AllComponent} from './content/content-in/products/all/all.component';
+import {OrderService} from './services/order/order.service';
 
 
 const productsRoutes = [
@@ -80,6 +81,7 @@ const routes = [
     UserService,
     AuthService,
     ProductService,
+    OrderService,
     AuthGuard,
     CookieService
   ],

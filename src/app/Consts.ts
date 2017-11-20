@@ -18,4 +18,8 @@ export class Consts {
 
   public static PRODUCTS_URL = Consts.BD_URL + '/products';
   public static PRODUCT_ADD_URL = Consts.PRODUCTS_URL + '/add';
+
+  public static ORDERS_URL = Consts.BD_URL + '/orders';
+  public static ORDERS_BY_USER_ID_URL = Consts.ORDERS_URL + '/userId';
+  public static ORDER_ADD_URL = Consts.ORDERS_URL + '/add';
 }
