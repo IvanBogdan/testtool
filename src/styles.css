@@ -16,3 +16,19 @@
 .ttbtn:active {
   box-shadow: 2px 2px 5px rgba(0,0,0,10);
 }
+
+.ttbtn2 {
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  background-color: cadetblue;
+}
+
+.ttbtn2:hover {
+  opacity: 0.8;
+}
+
+.ttbtn2:active {
+  box-shadow: 2px 2px 5px rgba(0,0,0,10);
+}

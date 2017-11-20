@@ -21,4 +21,8 @@ export class BasketComponent implements OnInit {
   totalPrice(): number {
     return Basket.totalPrice();
   }
+
+  addOrder(): void {
+    Basket.clear();
+  }
 }
