@@ -1,0 +1,19 @@
+<clr-datagrid>
+  <clr-dg-column>Продукт</clr-dg-column>
+  <clr-dg-column>Описание</clr-dg-column>
+  <clr-dg-column>Цена за штуку</clr-dg-column>
+  <clr-dg-column>Количество</clr-dg-column>
+  <clr-dg-column>Итоговая цена</clr-dg-column>
+
+  <clr-dg-row *ngFor="let item of getItemList()">
+    <clr-dg-cell>{{item.product.name}}</clr-dg-cell>
+    <clr-dg-cell>{{item.product.description}}</clr-dg-cell>
+    <clr-dg-cell>{{item.product.price | number:'.2-2'}} руб.</clr-dg-cell>
+    <clr-dg-cell>{{item.quantity}}</clr-dg-cell>
+    <clr-dg-cell>{{item.totalPrice() | number:'.2-2'}} руб.</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>Итого: {{totalPrice() | number:'.2-2'}} руб.</clr-dg-footer>
+</clr-datagrid>
+
+<button (click)="addOrder()" class="ttbtn2">Оформить заказ</button>

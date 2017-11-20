@@ -1,0 +1,31 @@
+<div class="row cardSize">
+  <div class="card">
+    <div class="card-header">
+      {{product.name}}
+    </div>
+    <div class="card-block">
+      <div class="card-title">
+        Price:
+        <br/>
+        {{product.price | number:'.2-2'}} руб.
+      </div>
+      <div class="card-text">
+        {{product.description}}
+      </div>
+    </div>
+    <div class="card-footer">
+      В наличии: {{product.quantity}}
+      <div *ngIf="isOper()">
+      <input [formControl]="quantityControl"
+             type="number"
+             min="0"
+             max={{product.quantity}}
+             #quantity
+             class="qty-spinner"/>
+      <button class="btn btn-sm btn-link"
+              (click)="addToBasket(quantity.value)">Add to basket
+      </button>
+      </div>
+    </div>
+  </div>
+</div>

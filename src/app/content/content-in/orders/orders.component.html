@@ -1,0 +1,33 @@
+
+<clr-datagrid>
+  <clr-dg-column>№ заказа</clr-dg-column>
+  <clr-dg-column *ngIf="isAdmin()">Пользователь</clr-dg-column>
+  <clr-dg-column>Продукты</clr-dg-column>
+  <clr-dg-column>Итоговая цена</clr-dg-column>
+  <clr-dg-column>Статус</clr-dg-column>
+
+  <clr-dg-row *ngFor="let order of orders as OrderExt">
+    <clr-dg-cell>{{order.id}}</clr-dg-cell>
+    <clr-dg-cell *ngIf="isAdmin()">{{order.user.name}}</clr-dg-cell>
+    <clr-dg-cell>
+      <table>
+        <tr *ngFor="let product of order.products; let i = index">
+          <td style="padding-right: 10px;">
+            {{product.name}}
+          </td>
+          <td style="padding-right: 10px;">
+            {{order.quantity[i]}}
+          </td>
+          <td>
+            x {{product.price | number:'.2-2'}} руб.
+          </td>
+          <td>
+            = {{product.price * order.quantity[i] | number:'.2-2'}} руб.
+          </td>
+        </tr>
+      </table>
+      </clr-dg-cell>
+    <clr-dg-cell>{{totalPrice(order) | number:'.2-2'}} руб.</clr-dg-cell>
+    <clr-dg-cell>{{order.status}}</clr-dg-cell>
+  </clr-dg-row>
+</clr-datagrid>

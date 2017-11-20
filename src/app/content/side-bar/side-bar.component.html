@@ -1,0 +1,15 @@
+<section class="sidenav-content">
+  <section class="nav-group">
+    <input id="tabexample2" type="checkbox">
+    <label for="tabexample2">Главное меню</label>
+    <ul class="nav-list" *ngIf="isOper()">
+      <li><a class="nav-link" routerLinkActive='active' routerLink='products'>Каталог</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='busket'>Корзина</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='orders'>Заказы</a></li>
+    </ul>
+    <ul class="nav-list" *ngIf="isAdmin()">
+      <li><a class="nav-link" routerLinkActive='active' routerLink='orders'>Заказы</a></li>
+      <li><a class="nav-link" routerLinkActive='active' routerLink='products'>Продукты</a></li>
+    </ul>
+  </section>
+</section>

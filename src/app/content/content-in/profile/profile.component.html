@@ -1,0 +1,26 @@
+<table class="dataGrid">
+  <tr>
+    <td>
+      <label for="login">Login:</label>
+    </td>
+    <td>
+      <span id="login">{{user.login}}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="name">Name:</label>
+    </td>
+    <td>
+      <span id="name">{{user.name}}</span>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <label for="accessLevel">Access Level:</label>
+    </td>
+    <td>
+      <span id="accessLevel">{{user.accessLevel | accessLevel}}</span>
+    </td>
+  </tr>
+</table>
