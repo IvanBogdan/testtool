@@ -1,0 +1,24 @@
+.error {
+  color: red;
+  padding-left: 5px;
+  font-weight: normal;
+  font-size: 8pt;
+}
+
+.addBtn {
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  background-color: cadetblue;
+  width: 90px;
+  float: right;
+}
+
+.ttbtn:hover {
+  opacity: 0.8;
+}
+
+.ttbtn:active {
+  box-shadow: 2px 2px 5px rgba(0,0,0,10);
+}

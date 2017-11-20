@@ -3,6 +3,7 @@ import {UserService} from '../services/user/user.service';
 import {User} from '../services/user/user';
 import {Cookie} from 'ng2-cookies';
 import {Router, ActivatedRoute} from '@angular/router';
+import {Basket} from './content-in/basket/basket';
 
 @Component({
   selector: 'app-content',
@@ -21,6 +22,7 @@ export class ContentComponent implements OnInit {
   ngOnInit() {
     this.userSubscribe();
     this.redirect();
+    this.clearBasket();
   }
 
   get user(): User {
@@ -36,7 +38,7 @@ export class ContentComponent implements OnInit {
   }
 
   redirect() {
-    let options = {relativeTo: this.route};
+    const options = {relativeTo: this.route};
     if (this.router.routerState.snapshot.url.endsWith('market')) {
       switch (Cookie.get('accessLevel')) {
         case '0': {
@@ -51,5 +53,9 @@ export class ContentComponent implements OnInit {
           this.router.navigate([''], options);
       }
     }
+  }
+
+  clearBasket() {
+    Basket.clear();
   }
 }

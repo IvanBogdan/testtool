@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Basket, Item} from './basket';
 
 @Component({
   selector: 'app-basket',
@@ -13,4 +14,11 @@ export class BasketComponent implements OnInit {
   ngOnInit() {
   }
 
+  getItemList(): Item[] {
+    return Basket.itemList;
+  }
+
+  totalPrice(): number {
+    return Basket.totalPrice();
+  }
 }

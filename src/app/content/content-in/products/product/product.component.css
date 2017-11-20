@@ -5,6 +5,10 @@
   padding-right: 10px;
 }
 
+.card-header {
+  height: 50px;
+}
+
 .card-block {
   height: 150px;
 }

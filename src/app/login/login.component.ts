@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
     return this._errors;
   }
 
-  private emptyErrors() {
+  private emptyErrors(): void {
     this._errors = [];
     this._loginError = null;
     this._passwordError = null;
