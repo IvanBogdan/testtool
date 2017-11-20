@@ -1,9 +1,9 @@
 export class Consts {
 
-  public static HOST = 'localhost';
-  public static PORT = '8080';
-  // public static HOST = '195.208.109.61';
-  // public static PORT = '807';
+  // public static HOST = 'localhost';
+  // public static PORT = '8080';
+  public static HOST = '195.208.109.61';
+  public static PORT = '807';
 
   public static HOST_URL = 'http://' + Consts.HOST + ':' + Consts.PORT;
 
